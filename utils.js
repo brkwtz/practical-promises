@@ -33,4 +33,15 @@ utils.magenta = function (text) {
 	console.error(chalk.magenta(text));
 };
 
+utils.readFilesOurs = function(arrOfFiles) {
+  return arrOfFiles.map((file) => {
+    fs.readFile(file, function (err, buffer) {
+      if (err) console.log(err);
+      else buffer.toString();
+    });
+  });
+};
+
 module.exports = utils;
+
+
